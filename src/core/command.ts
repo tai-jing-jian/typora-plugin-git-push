@@ -1,18 +1,18 @@
 import { Component, Notice } from '@typora-community-plugin/core';
 import { File, getMarkdown } from 'typora';
-import type GitPushPlugin from 'src/main';
+import type GitSyncPlugin from 'src/main';
 import { R } from './i18n';
 import { exec, execSync } from 'child_process';
 
 export class PluginCommand extends Component {
 
-  constructor(private plugin: GitPushPlugin) {
+  constructor(private plugin: GitSyncPlugin) {
     super();
   }
 
   onload(): void {
     this.plugin.registerCommand({
-      id: 'git-push',
+      id: 'git-sync',
       title: R.commandTitle,
       scope: 'editor',
       hotkey: 'Ctrl+Alt+p',

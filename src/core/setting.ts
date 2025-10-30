@@ -20,7 +20,7 @@ export class PluginSettingTab extends SettingTab {
   private isInit: boolean = false;
 
   get name(): string {
-    return 'Git Push';
+    return 'Git Sync';
   }
 
   constructor(private plugin: MdPaddingPlugin) {
