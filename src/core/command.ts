@@ -2,8 +2,7 @@ import { Component, Notice } from '@typora-community-plugin/core';
 import { File, getMarkdown } from 'typora';
 import type GitPushPlugin from 'src/main';
 import { R } from './i18n';
-
-const { exec, execSync } = require('child_process');
+import { exec, execSync } from 'child_process';
 
 export class PluginCommand extends Component {
   
