@@ -6,8 +6,7 @@ import { R } from './i18n';
 const { exec, execSync } = require('child_process');
 
 export class PluginCommand extends Component {
-  private noticeTimeOut: number;
-
+  
   constructor(private plugin: GitPushPlugin) {
     super();
   }
