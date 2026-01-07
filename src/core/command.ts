@@ -15,7 +15,7 @@ export class PluginCommand extends Component {
       id: 'git-sync',
       title: R.commandTitle,
       scope: 'editor',
-      hotkey: 'Ctrl+Alt+p',
+      hotkey: 'Ctrl+Alt+g',
       callback: () => this.onCommandCallback(),
     });
   }
@@ -25,7 +25,7 @@ export class PluginCommand extends Component {
     try {
       let n1 = new Notice(R.commandMessage, 0);
       n1.show();
-      let info = execSync('echo ' + this.plugin.settings.get('commitInfo')).toString().trim();
+      let info = execSync('echo ' + this.plugin.settings.get('commitMsg')).toString().trim();
       let cd = 'cd /d ' + this.plugin.settings.get('repoPath')
       exec(`${cd} && git add . && git commit -m "${info}"`, (error: any, stdout: any, stderr: any) => {
         let m2 = 'commit: ' + (stdout.includes('nothing to commit') ? 'nothing to commit' : stdout.split('\n').slice(-2)[0].trim());

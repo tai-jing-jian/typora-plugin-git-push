@@ -5,16 +5,16 @@ import { R } from './i18n';
 export const DEFAULT_SETTINGS: PluginOptions = {
   noticeTimeOut: 2000,
   repoPath: 'D:\\note',
-  commitInfo: 'save: %date:~0,10% %time:~0,8%',
+  commitMsg: 'save: %date:~0,10% %time:~0,8%',
 };
 
 export interface PluginOptions {
   noticeTimeOut: number;
   repoPath: string;
-  commitInfo: string;
+  commitMsg: string;
 }
 
-type Option = 'noticeTimeOut' | 'repoPath' | 'commitInfo';
+type Option = 'noticeTimeOut' | 'repoPath' | 'commitMsg';
 
 export class PluginSettingTab extends SettingTab {
   private isInit: boolean = false;
@@ -31,7 +31,7 @@ export class PluginSettingTab extends SettingTab {
     if (!this.isInit) {
       this.addPluginOption('noticeTimeOut');
       this.addPluginOption('repoPath');
-      this.addPluginOption('commitInfo');
+      this.addPluginOption('commitMsg');
       this.isInit = true;
     }
     super.show();
@@ -47,11 +47,11 @@ export class PluginSettingTab extends SettingTab {
           this.addNumberSetting(input, optionValue, option);
         } else if (option === 'repoPath') {
           setting.addDescription(R.repoPath);
-          input.placeholder = DEFAULT_SETTINGS.repoPath;
+          input.placeholder = '/path/to/your/repo';
           this.addStringSetting(input, optionValue, option);
-        } else if (option === 'commitInfo') {
-          setting.addDescription(R.commitInfo);
-          input.placeholder = DEFAULT_SETTINGS.commitInfo;
+        } else if (option === 'commitMsg') {
+          setting.addDescription(R.commitMsg);
+          input.placeholder = 'commit message';
           this.addStringSetting(input, optionValue, option);
         }
       });

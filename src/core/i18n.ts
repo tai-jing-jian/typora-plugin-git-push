@@ -8,7 +8,7 @@ export const R = new I18n({
       commandFinish: 'Save finished',
       noticeTimeOut: 'Notification timeout (ms)',
       repoPath: 'Git repository path',
-      commitInfo: 'Git commit info',
+      commitMsg: 'Git commit message',
     },
     'zh-cn': {
       commandTitle: 'Git 同步',
@@ -16,7 +16,7 @@ export const R = new I18n({
       commandFinish: '保存成功',
       noticeTimeOut: '通知超时时间（ms）',
       repoPath: '仓库地址',
-      commitInfo: '提交信息',
+      commitMsg: '提交信息',
     },
   },
 }).t;
