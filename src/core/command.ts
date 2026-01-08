@@ -15,7 +15,7 @@ export class PluginCommand extends Component {
       id: 'git-sync',
       title: R.commandTitle,
       scope: 'editor',
-      hotkey: 'Ctrl+Alt+g',
+      hotkey: 'Ctrl+Alt+p',
       callback: () => this.onCommandCallback(),
     });
   }
